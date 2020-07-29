@@ -185,6 +185,7 @@ public abstract class CacheLoader<K, V> {
     return new CacheLoader<K, V>() {
       @Override
       public V load(K key) throws Exception {
+        checkNotNull(key)
         return loader.load(key);
       }
 
